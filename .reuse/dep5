@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: amiga-latency-test
+Upstream-Contact: Nico Bendlin <nico@nicode.net>
+Source: https://github.com/nicodex/amiga-latency-test
+
+Files: *
+Copyright: 2024 Nico Bendlin <nico@nicode.net>
+License: CC0-1.0

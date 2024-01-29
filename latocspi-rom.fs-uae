@@ -1,0 +1,15 @@
+#!/usr/bin/env fs-uae
+
+[fs-uae]
+accuracy = 1
+amiga_model = A500
+floppy_drive_count = 0
+governor_warning = 0
+kickstart_file = $CONFIG/latocspi.rom
+save_states = 0
+save_states_dir = $CONFIG/
+screenshots_output_dir = $CONFIG/
+screenshots_output_mask = 2
+screenshots_output_prefix = latocspi-rom
+theme = led-bars-edge
+zoom = full

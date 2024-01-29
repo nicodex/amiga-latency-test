@@ -1,0 +1,5 @@
+* text=auto
+*.adf binary
+*.asm text eol=lf
+*.fs-uae text eol=lf
+*.rom binary
