@@ -3,6 +3,11 @@ Amiga Latency Test ROM (PAL HiRes interlaced)
 
 Just another custom ROM for testing display latency on classic PAL Amigas.
 
+- [latocspi.rom](latocspi.rom) - 512K ROM image (MapROM or emulator)
+- [latocspi.bin](latocspi.bin) - 512K byte swapped ROM image (EPROM)
+- [latocspi-a1k.adf](latocspi-a1k.adf) - Kickstart disk (Amiga 1000)
+- [latocspi-a1k.rom](latocspi-a1k.rom) - 256K ROM image (Amiga 1000)
+
 The diagonal background pattern is moved one line upwards every full _frame_,
 and the color bars are moved 2 pixels (1 LoRes) left every _field_ (4/frame).
 

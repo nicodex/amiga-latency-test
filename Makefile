@@ -11,13 +11,16 @@ VASM_OPTS ?= -quiet -wfail -x
 ROMTOOL ?= /usr/bin/env romtool
 FSUAE ?= /usr/bin/env fs-uae
 
-all: $(ROMNAME).rom $(ROMNAME)-a1k.adf
+all: $(ROMNAME).rom $(ROMNAME).bin $(ROMNAME)-a1k.adf
 
 .PHONY: all clean check-rom check-a1k check test-rom test-a1k
 
 $(ROMNAME).rom : $(ROMNAME)-rom.asm
 	$(VASM) -Fbin $(VASM_OPTS) -o $@ $< && \
 	$(ROMTOOL) copy --fix-checksum $@ $@
+
+$(ROMNAME).bin : $(ROMNAME).rom
+	dd if=$< of=$@ conv=swab
 
 $(ROMNAME)-a1k.rom : $(ROMNAME)-rom.asm
 	$(VASM) -Fbin $(VASM_OPTS) -DROM_256K -o $@ $< && \
@@ -28,6 +31,7 @@ $(ROMNAME)-a1k.adf : $(ROMNAME)-a1k.asm $(ROMNAME)-a1k.rom
 
 clean:
 	rm -f $(ROMNAME).rom
+	rm -f $(ROMNAME).bin
 	rm -f $(ROMNAME)-a1k.rom
 	rm -f $(ROMNAME)-a1k.adf
 
